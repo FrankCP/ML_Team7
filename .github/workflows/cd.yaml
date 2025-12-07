@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Export Marimo app
-        run: marimo export homework2.py -o docs
+        run: marimo export html-wasm homework2.py -o docs
       - name: Commit HTML
         run: |
           git config user.name "github-actions"
