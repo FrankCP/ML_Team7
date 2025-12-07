@@ -50,6 +50,7 @@ def _():
         classification_report,
         confusion_matrix,
         np,
+        os,
         pd,
         plt,
         sns,
@@ -106,8 +107,7 @@ def _(mo):
 
 
 @app.cell
-def _():
-    import os
+def _(os):
     os.getcwd()
     return
 
