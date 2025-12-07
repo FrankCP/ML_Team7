@@ -1,5 +1,5 @@
 # /// script
-# requires-python = ">=3.9"
+# requires-python = ">=3.11"
 # dependencies = [
 #     "marimo",
 #     "pandas",
@@ -36,7 +36,7 @@ def _():
     import numpy as np
     import matplotlib.pyplot as plt
     import seaborn as sns
-    import os 
+    import os
     from sklearn.model_selection import train_test_split
     from sklearn.preprocessing import StandardScaler
     from sklearn.linear_model import LogisticRegression
@@ -109,6 +109,13 @@ def _(mo):
 @app.cell
 def _(os):
     os.getcwd()
+    os.listdir()
+    return
+
+
+@app.cell
+def _(mo):
+    mo.notebook_location()
     return
 
 
