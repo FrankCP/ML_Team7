@@ -1,9 +1,18 @@
 # /// script
 # requires-python = ">=3.9"
 # dependencies = [
-#     "kagglehub",
 #     "marimo",
 #     "pandas",
+#     "scipy<1.16",
+#     "numpy<2",
+#     "scikit-learn",
+#     "statsmodels",
+#     "matplotlib",
+#     "adjustText",
+#     "nbformat",
+#     "mlba",
+#     "kagglehub==0.3.13",
+#     "seaborn",
 # ]
 # ///
 
