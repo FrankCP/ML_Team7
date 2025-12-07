@@ -1,4 +1,3 @@
-Team 7
 
 ##  Members
 - Mezenceva Anna
