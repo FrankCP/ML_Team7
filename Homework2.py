@@ -50,14 +50,6 @@ def _(mo):
     return
 
 
-app._unparsable_cell(
-    r"""
-    !pip install kagglehub
-    """,
-    name="_"
-)
-
-
 @app.cell
 def _(pd):
     def CorrectDate(df):
