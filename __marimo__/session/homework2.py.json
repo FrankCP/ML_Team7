@@ -18,6 +18,12 @@
       "console": []
     },
     {
+      "id": "MJUe",
+      "code_hash": "f7f1d46e4166c03949f35456ca99147c",
+      "outputs": [],
+      "console": []
+    },
+    {
       "id": "vblA",
       "code_hash": "e371f82b93e743f72b8bf2f0d595065c",
       "outputs": [
@@ -31,138 +37,8 @@
       "console": []
     },
     {
-      "id": "Xref",
-      "code_hash": "ae9f7dac98fac69a9c1a6edcd5f789b8",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"getting-our-data\">Getting Our Data</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "RGSE",
-      "code_hash": "3fc1e655053bf17d34c8f0c099e98ada",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"visual-looking-to-our-datasets\">Visual Looking To Our Datasets</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "iLit",
-      "code_hash": "2d997aacd734523bf8fdd9c059ec5d82",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"data-preparation-cleaning-preprocessing\">Data Preparation: Cleaning &amp; Preprocessing</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "qnkX",
-      "code_hash": "080e13d3bf59e0c1509496b39807b283",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">As we see, the time columns are strings instead of datetime</span>\n</blockquote></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Pvdt",
-      "code_hash": "e05fba688f33cf0213cd439191da21ee",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"ml-model-part\">ML Model Part</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ZBYS",
-      "code_hash": "316a2a5bcb80319b1a07c6b2fea91817",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"feature-engineering-part\">Feature Engineering Part</h3></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "xXTn",
-      "code_hash": "4d46dd235ffdd34ac6196e76d776f66f",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"clustering-part\">Clustering Part</h3></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "pHFh",
-      "code_hash": "e5f7ce3e60ebe03ecd6580e0be3777d1",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">Let's get the best number of clusters for our data</span>\n</blockquote></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "dNNg",
-      "code_hash": "36a9ce56e6e455a5fe31002a8af2e214",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">The analysis shows that the segments worth focusing on are the moderate-usage customers with an average lifetime near to 306 days, and the high-usage customers near to 282 days. The other clusters represent casual users whose churn is less critical.</span>\n</blockquote></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "yCnT",
-      "code_hash": "19d269fd4e14f1a84be04fe971f5e785",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"the-visualization-part\">The Visualization Part</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "MJUe",
-      "code_hash": "f7f1d46e4166c03949f35456ca99147c",
+      "id": "pNqR",
+      "code_hash": null,
       "outputs": [],
       "console": []
     },
@@ -185,6 +61,19 @@
       "console": []
     },
     {
+      "id": "Xref",
+      "code_hash": "ae9f7dac98fac69a9c1a6edcd5f789b8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"getting-our-data\">Getting Our Data</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "SFPL",
       "code_hash": "da9173f476b363feda7998e39fdaa84d",
       "outputs": [],
@@ -194,6 +83,19 @@
       "id": "BYtC",
       "code_hash": "97cfa3af28c6bf63a03ad48b3ed3069e",
       "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "3fc1e655053bf17d34c8f0c099e98ada",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"visual-looking-to-our-datasets\">Visual Looking To Our Datasets</h1></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -221,6 +123,19 @@
       "console": []
     },
     {
+      "id": "iLit",
+      "code_hash": "2d997aacd734523bf8fdd9c059ec5d82",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"data-preparation-cleaning-preprocessing\">Data Preparation: Cleaning &amp; Preprocessing</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "ZHCJ",
       "code_hash": "c4c3fd82171c73470b01ceb0950f63a8",
       "outputs": [],
@@ -230,6 +145,19 @@
       "id": "ROlb",
       "code_hash": "1741f0f6eac0d00faafc0fda28a0a63c",
       "outputs": [],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "080e13d3bf59e0c1509496b39807b283",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">As we see, the time columns are strings instead of datetime</span>\n</blockquote></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -263,6 +191,32 @@
       "console": []
     },
     {
+      "id": "Pvdt",
+      "code_hash": "e05fba688f33cf0213cd439191da21ee",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"ml-model-part\">ML Model Part</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "316a2a5bcb80319b1a07c6b2fea91817",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"feature-engineering-part\">Feature Engineering Part</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "aLJB",
       "code_hash": "d8784e5e4d547b56d5bced1407e131c2",
       "outputs": [],
@@ -275,9 +229,35 @@
       "console": []
     },
     {
+      "id": "xXTn",
+      "code_hash": "4d46dd235ffdd34ac6196e76d776f66f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"clustering-part\">Clustering Part</h3></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "AjVT",
       "code_hash": "052e3eb9fa7fbea71be1f84fee72e3e5",
       "outputs": [],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "e5f7ce3e60ebe03ecd6580e0be3777d1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">Let's get the best number of clusters for our data</span>\n</blockquote></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -302,6 +282,32 @@
       "id": "TXez",
       "code_hash": "b33fc50eaae9b2549e8975bfb4d3480e",
       "outputs": [],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "36a9ce56e6e455a5fe31002a8af2e214",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">The analysis shows that the segments worth focusing on are the moderate-usage customers with an average lifetime near to 306 days, and the high-usage customers near to 282 days. The other clusters represent casual users whose churn is less critical.</span>\n</blockquote></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yCnT",
+      "code_hash": "19d269fd4e14f1a84be04fe971f5e785",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"the-visualization-part\">The Visualization Part</h1></span>"
+          }
+        }
+      ],
       "console": []
     },
     {
@@ -415,6 +421,12 @@
     {
       "id": "CLip",
       "code_hash": "d9aeaa7402aeb9955fa214c096c2bc1e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "YECM",
+      "code_hash": null,
       "outputs": [],
       "console": []
     }

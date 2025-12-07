@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.18.0"
+__generated_with = "0.18.3"
 app = marimo.App()
 
 
@@ -48,6 +48,14 @@ def _(mo):
     # Our Functions
     """)
     return
+
+
+app._unparsable_cell(
+    r"""
+    !pip install kagglehub
+    """,
+    name="_"
+)
 
 
 @app.cell
@@ -455,7 +463,6 @@ def _(mo):
         start=1, stop=10, value=1,
         label="Trips per week"
     )
-
     return churn_threshold_slider, n_clusters_slider, trips_week_slider
 
 
@@ -644,7 +651,6 @@ def _(df_users_3):
 
 
     countplot_seaborn(df_users_3, "cluster_behavior")
-
     return
 
 
@@ -783,7 +789,6 @@ def _(df_users_3, multi_index, pd):
         values=None,
         aggfunc="size"
     )
-
     return
 
 
@@ -792,7 +797,6 @@ def _(df_city, df_users_3):
     df_users_3['first_city'] = df_users_3['first_city'].map(
         df_city.set_index('city_id')['city_name']
     )
-
     return
 
 
