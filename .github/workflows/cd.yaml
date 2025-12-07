@@ -16,11 +16,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Export Marimo app
-        run: marimo export app.py -o app.html
+        run: marimo export homework2.py -o docs
       - name: Commit HTML
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add app.html
+          git add docs/*
           git commit -m "Update exported app"
           git push
