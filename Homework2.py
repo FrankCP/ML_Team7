@@ -115,14 +115,14 @@ def _(mo):
 
 @app.cell
 def _(pd):
-    df_calendar = pd.read_csv('calendar.csv')
+    df_calendar = pd.read_csv('../calendar.csv')
     df_calendar
     return (df_calendar,)
 
 
 @app.cell
 def _(pd):
-    df_city = pd.read_csv('city.csv')
+    df_city = pd.read_csv('../city.csv')
     df_city
     return (df_city,)
 
