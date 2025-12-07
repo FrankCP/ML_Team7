@@ -36,7 +36,6 @@ def _():
     import numpy as np
     import matplotlib.pyplot as plt
     import seaborn as sns
-    import kagglehub
     import os 
     from sklearn.model_selection import train_test_split
     from sklearn.preprocessing import StandardScaler
@@ -50,9 +49,7 @@ def _():
         accuracy_score,
         classification_report,
         confusion_matrix,
-        kagglehub,
         np,
-        os,
         pd,
         plt,
         sns,
@@ -105,25 +102,6 @@ def _(mo):
     mo.md(r"""
     # Getting Our Data
     """)
-    return
-
-
-@app.cell
-def _(kagglehub):
-    # Download the dataset from Kaggle
-    path = kagglehub.dataset_download("ivanchvez/99littleorange")
-    print("Path to dataset files:", path)
-    return (path,)
-
-
-@app.cell
-def _(os, path):
-    # Check current working directory and change to dataset path
-    print(os.getcwd())
-    os.chdir(path)
-
-    # List files that has been downloaded
-    os.listdir()
     return
 
 
