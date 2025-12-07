@@ -618,10 +618,192 @@ def _(df_users_2, mo):
 
 
 @app.cell
-def _(df_users_3, plt):
-    fig, ax_ = plt.subplots(figsize=(6, 4))
-    ax_.bar(df_users_3.index, "cluster_behavior")
+def _(df_users_3):
+    def countplot_seaborn(df, feature):
+        import matplotlib.pyplot as plt
+        import seaborn as sns
 
+        plt.figure(figsize=(6, 4))
+
+        # Orange countplot
+        sns.countplot(
+            data=df,
+            x=feature,
+            color="#FF8C00"
+        )
+
+        plt.title(f"Countplot of {feature}")
+        plt.xlabel(feature)
+        plt.ylabel("Number Of Users")
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+
+        fig = plt.gcf()
+        return fig
+
+
+
+    countplot_seaborn(df_users_3, "cluster_behavior")
+
+    return
+
+
+@app.cell
+def _(df_users_3):
+    df_users_3.select_dtypes("object").columns
+    return
+
+
+@app.cell
+def _(df_users_3):
+    df_users_3
+    return
+
+
+@app.function
+def build_pivot_table(df, index_col, value_col, aggfunc_name):
+    import pandas as pd
+
+    # Map readable names to real pandas aggfuncs
+    agg_map = {
+        "Mean": "mean",
+        "Sum": "sum",
+        "Count": "count",
+        "Std": "std",
+        "Min": "min",
+        "Max": "max",
+    }
+
+    aggfunc = agg_map[aggfunc_name]
+
+    pivot = pd.pivot_table(
+        df,
+        index=index_col,
+        values=value_col,
+        aggfunc=aggfunc,
+    )
+
+    return pivot.reset_index()
+
+
+@app.cell
+def _():
+    def _(df_users_2, mo):
+        import pandas as pd
+
+        # candidates for index (rows): typically categorical
+        index_cols = df_users_2.select_dtypes(include=["object", "category", "bool"]).columns.tolist()
+        if not index_cols:
+            index_cols = df_users_2.columns.tolist()  # fallback
+
+        # candidates for values: numeric features
+        value_cols = df_users_2.select_dtypes(include="number").columns.tolist()
+
+        aggfunc_options = ["Mean", "Sum", "Count", "Std", "Min", "Max"]
+
+        index_select = mo.ui.dropdown(
+            options=index_cols,
+            label="Index (rows)",
+            value=index_cols[0],
+        )
+
+        value_select = mo.ui.dropdown(
+            options=value_cols,
+            label="Feature (values)",
+            value=value_cols[0],
+        )
+
+        aggfunc_select = mo.ui.dropdown(
+            options=aggfunc_options,
+            label="Aggregation",
+            value="Mean",
+        )
+
+        # Show the controls
+        mo.hstack([index_select, value_select, aggfunc_select])
+
+        return index_select, value_select, aggfunc_select
+    return
+
+
+@app.cell
+def _():
+    def _(df_users_2, index_select, value_select, aggfunc_select, build_pivot_table, mo):
+        index_col = index_select.value
+        value_col = value_select.value
+        aggfunc_name = aggfunc_select.value
+
+        pivot = build_pivot_table(
+            df_users_2,
+            index_col=index_col,
+            value_col=value_col,
+            aggfunc_name=aggfunc_name,
+        )
+
+        mo.vstack(
+            [
+                mo.md(
+                    f"### Pivot table\n"
+                    f"- **Index:** `{index_col}`  \n"
+                    f"- **Feature:** `{value_col}`  \n"
+                    f"- **Aggfunc:** `{aggfunc_name}`"
+                ),
+                mo.ui.table(pivot),
+            ]
+        )
+
+        return pivot
+    return
+
+
+@app.cell
+def _(df_users_3, mo):
+    multi_features = mo.ui.multiselect(
+        options=df_users_3.columns.tolist(),
+        label="Choose multiple columns",
+        value=[],      
+        )
+
+    multi_index = mo.ui.multiselect(
+        options=df_users_3.select_dtypes("object").columns,
+        label="Choose multiple columns",
+        value=[],      
+        )
+
+    mo.vstack([multi_index, multi_features, ])
+    return (multi_index,)
+
+
+@app.cell
+def _(df_users_3, multi_index, pd):
+    pd.pivot_table(
+        df_users_3,
+        index=multi_index.value,
+        columns=multi_index.value,
+        values=None,
+        aggfunc="size"
+    )
+
+    return
+
+
+@app.cell
+def _(df_city, df_users_3):
+    df_users_3['first_city'] = df_users_3['first_city'].map(
+        df_city.set_index('city_id')['city_name']
+    )
+
+    return
+
+
+@app.cell
+def _(multi_index):
+    multi_index.value
+    return
+
+
+@app.cell
+def _():
     return
 
 
