@@ -1,0 +1,11 @@
+scipy<1.16
+numpy<2
+pandas
+scikit-learn
+statsmodels
+matplotlib
+adjustText
+nbformat
+mlba
+kagglehub
+seaborn
