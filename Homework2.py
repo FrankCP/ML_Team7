@@ -50,7 +50,6 @@ def _():
         classification_report,
         confusion_matrix,
         np,
-        os,
         pd,
         plt,
         sns,
@@ -107,16 +106,9 @@ def _(mo):
 
 
 @app.cell
-def _(os):
-    os.getcwd()
-    os.listdir()
-    return
-
-
-@app.cell
-def _(mo):
-    mo.notebook_location()
-    return
+def _():
+    url="https://raw.githubusercontent.com/FrankCP/ML_Team7/main/data"
+    return (url,)
 
 
 @app.cell(hide_code=True)
@@ -128,29 +120,29 @@ def _(mo):
 
 
 @app.cell
-def _(pd):
-    df_calendar = pd.read_csv('../calendar.csv')
+def _(pd, url):
+    df_calendar = pd.read_csv(url+'calendar.csv')
     df_calendar
     return (df_calendar,)
 
 
 @app.cell
-def _(pd):
-    df_city = pd.read_csv('../city.csv')
+def _(pd, url):
+    df_city = pd.read_csv(url+'city.csv')
     df_city
     return (df_city,)
 
 
 @app.cell
-def _(pd):
-    df_passenger= pd.read_csv('passenger.csv')
+def _(pd, url):
+    df_passenger= pd.read_csv(url+'passenger.csv')
     df_passenger
     return (df_passenger,)
 
 
 @app.cell
-def _(pd):
-    df_trip = pd.read_csv('trip.csv')
+def _(pd, url):
+    df_trip = pd.read_csv(url+'trip.csv.gz')
     df_trip
     return (df_trip,)
 
