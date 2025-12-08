@@ -133,9 +133,8 @@ def _(np, plt):
         plt.title(f"Scatter Plot: {x_col} vs {y_col}")
         plt.legend(title="cluster_behavior")
         plt.tight_layout()
-    
-        return plt.gcf()
 
+        return plt.gcf()
     return (scatter_matplotlib,)
 
 
