@@ -7,6 +7,5 @@ matplotlib
 adjustText
 nbformat
 mlba
-kagglehub
 seaborn
 marimo
