@@ -447,7 +447,7 @@ def _(cluster_features, kmeans_final, pd, scaler):
         columns=cluster_features.columns
     )
 
-    #centers
+    centers
     return (centers,)
 
 

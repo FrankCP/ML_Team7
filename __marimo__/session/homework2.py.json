@@ -9,10 +9,10 @@
       "code_hash": "7367cedffff44a8fa7f822aab23c62da",
       "outputs": [
         {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"99-little-orange-dashboard\">99 Little Orange - Dashboard</h1></span>"
-          }
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
         }
       ],
       "console": []
@@ -23,12 +23,19 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 9abe9d07-4403-4fe9-b1e6-d270387d2703",
+          "ename": "exception",
+          "evalue": "No module named 'pandas'",
           "traceback": []
         }
       ],
-      "console": []
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;C:\\Users\\ASUS\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\marimo\\_runtime\\executor.py&quot;</span>, line <span class=\"m\">138</span>, in <span class=\"n\">execute_cell</span>\n<span class=\"w\">    </span><span class=\"n\">exec</span><span class=\"p\">(</span><span class=\"n\">cell</span><span class=\"o\">.</span><span class=\"n\">body</span><span class=\"p\">,</span> <span class=\"n\">glbls</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;C:\\Users\\ASUS\\AppData\\Local\\Temp\\marimo_14820\\__marimo__cell_Hbol_.py&quot;</span>, line <span class=\"m\">1</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"kn\">import</span><span class=\"w\"> </span><span class=\"nn\">pandas</span><span class=\"w\"> </span><span class=\"k\">as</span><span class=\"w\"> </span><span class=\"nn\">pd</span>\n<span class=\"gr\">ModuleNotFoundError</span>: <span class=\"n\">No module named &#39;pandas&#39;</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
     },
     {
       "id": "MJUe",
@@ -36,8 +43,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 41e87862-23f7-4606-8663-81686411c518",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -49,8 +56,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 1eebbfb8-4177-42ae-9357-9136431e3e87",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -62,8 +69,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 4c2fc6c5-43b7-4737-b8b0-dc4ad0c24dff",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -75,8 +82,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: f26d3f7d-a7cd-4976-a8ee-2f38bde22230",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -88,8 +95,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 82f4c0b1-5d41-4051-957d-51f2c857f0b7",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -101,8 +108,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 0838e3e0-9a22-43c8-857c-555ec33cf1c1",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -114,8 +121,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 06b2b779-d728-4eff-b8d5-3553899ff106",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -127,8 +134,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 4a5ee545-54e1-401e-b858-96f70e9e5d50",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -153,8 +160,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 2425b9b8-f2b0-4908-b9a8-f1a1bac25dfb",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -166,8 +173,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 5430fc15-1467-48d3-a854-f575f2bc66ff",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -179,8 +186,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 0b73c613-b896-4e33-8699-c5ca8ab0ffed",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -192,8 +199,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 00ac8580-3ec1-4bc6-82a5-d19e1dfc5505",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -205,8 +212,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: a7403e07-86fc-4ef9-bbca-e8dca5543d76",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -218,8 +225,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 4fd1ca1e-071a-49de-8dfd-abf28e75cea1",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -231,8 +238,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: b921803a-6c3a-4ac5-ba65-08ab14c710eb",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -244,8 +251,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 00f5185a-d8e6-4500-88c3-415f5b5601b2",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -257,8 +264,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 62381ae4-e00f-495d-889e-bc43fd1fbfa7",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -270,8 +277,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 6ea4d2f9-eb02-4f75-be19-014c301203aa",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -283,8 +290,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 4929ba3a-1a3d-4318-a716-b960c2bc8b46",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -296,86 +303,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 397e186b-9177-4e92-9362-acf68384c64a",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Pvdt",
-      "code_hash": "47e2846155c49dac933a796ec2e96a79",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 9c5cf6d3-143d-4725-9086-355ba557de72",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ZBYS",
-      "code_hash": "c6796a123234bce5ce6ae4f2a535d9b4",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: a98ff30b-358a-49f9-838b-1b2d3c483a59",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "aLJB",
-      "code_hash": "e1fbc54e330338c1b18fbe0f791828cf",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: d3a748a8-d74a-433b-bbf7-e093e57b4ae5",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "AjVT",
-      "code_hash": "42257f7e6b3ceda6a34fa4cd3c9d4d7f",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 397df66b-836a-49c8-ad01-038abdedfb62",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "NCOB",
-      "code_hash": "e83e5d3ace0a8264873933207c0145f1",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 608574a7-2808-4715-8e8c-46b3d9e3721d",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "kqZH",
-      "code_hash": "ede831ad5cd3d6aae13fd73f6f76041a",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: a5be113f-f37d-46a1-9200-05bfb17f3318",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -387,8 +316,47 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: fc1aee9c-6b29-4d59-8edd-6247efa2db4c",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "47e2846155c49dac933a796ec2e96a79",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "c6796a123234bce5ce6ae4f2a535d9b4",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "e1fbc54e330338c1b18fbe0f791828cf",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -400,8 +368,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: f37a6991-533d-4e66-8fb8-cb4fee26c100",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -413,8 +381,21 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: e0cc55cc-404b-4b6d-a743-01e0683ac5d2",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "42257f7e6b3ceda6a34fa4cd3c9d4d7f",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -426,8 +407,21 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 629cd12a-0e14-42ed-b43f-aa00bb380478",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "e83e5d3ace0a8264873933207c0145f1",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -439,34 +433,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 3e51c55a-83a7-4a79-a133-a76314e2fe82",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "dNNg",
-      "code_hash": "26691f517f19b0ae9ef0950ea8cfd74e",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 2f1bfdc0-a24d-480a-93ea-58c640a3b91c",
-          "traceback": []
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "wAgl",
-      "code_hash": "4e957a2a043d9f4f415074967415c762",
-      "outputs": [
-        {
-          "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 96db44dd-a2bf-4242-8778-65aabe5e4678",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -478,8 +446,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 3c01b213-5f28-411a-a54b-0e8ef837450e",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -487,12 +455,25 @@
     },
     {
       "id": "TXez",
-      "code_hash": "47a8c22b6a3ccb93c70dcd286c8c95ab",
+      "code_hash": "be0503e208c46b58ecca120b160ef826",
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 071b7334-2670-4ee4-950a-eb29444ba5b3",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "26691f517f19b0ae9ef0950ea8cfd74e",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -504,8 +485,34 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 99ea8868-cf3d-4ff3-bb0a-4c11bf397c11",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
+      "code_hash": "ede831ad5cd3d6aae13fd73f6f76041a",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
+          "traceback": []
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
+      "code_hash": "4e957a2a043d9f4f415074967415c762",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -517,8 +524,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 229c7558-6e50-40ed-a311-f3147fda6cd6",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -530,8 +537,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 154a21e3-5157-49bb-b608-4cbb60848d87",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -543,8 +550,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 83547188-dcbd-4a0c-9789-602f1ad60937",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -556,8 +563,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 0708c120-d424-4218-9ac9-aa918a7d4b77",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -569,8 +576,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 79d3d394-992e-4e50-809e-87fc6c124b1e",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -582,8 +589,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 53598e2e-46cc-4d1b-b481-ab7fff64aea2",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -595,8 +602,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 181d637a-ad61-471f-9643-56abd1c25ad4",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -608,8 +615,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: b2962a5f-4b6a-487c-8978-fa73df5cec5d",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -621,8 +628,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: c5827c8a-b3e7-4aad-af2b-e47f2959b581",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -634,8 +641,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: b174422c-9eca-47f2-8e57-87aced6f8f76",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -647,8 +654,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 8af81d6a-e4c6-493c-aeff-f0b1a3ea4921",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -660,8 +667,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: be0f771b-1e1a-4ba5-baff-38630124ad81",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -673,8 +680,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 0b152c44-f49a-41fb-9d12-07089894988a",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
@@ -686,8 +693,8 @@
       "outputs": [
         {
           "type": "error",
-          "ename": "internal",
-          "evalue": "An internal error occurred: 447e1402-c7ee-45a1-8715-3fde0b2768c8",
+          "ename": "exception",
+          "evalue": "An ancestor raised an exception (ModuleNotFoundError): ",
           "traceback": []
         }
       ],
