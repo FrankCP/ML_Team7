@@ -1,21 +1,3 @@
-# /// script
-# requires-python = ">=3.11"
-# dependencies = [
-#     "marimo",
-#     "pandas",
-#     "scipy<1.16",
-#     "numpy<2",
-#     "scikit-learn",
-#     "statsmodels",
-#     "matplotlib",
-#     "adjustText",
-#     "nbformat",
-#     "mlba",
-#     "kagglehub==0.3.13",
-#     "seaborn",
-# ]
-# ///
-
 import marimo
 
 __generated_with = "0.18.3"
@@ -36,7 +18,7 @@ def _():
     import numpy as np
     import matplotlib.pyplot as plt
     import seaborn as sns
-    import os
+    import os 
     from sklearn.model_selection import train_test_split
     from sklearn.preprocessing import StandardScaler
     from sklearn.linear_model import LogisticRegression
@@ -95,6 +77,65 @@ def _(accuracy_score, classification_report, confusion_matrix):
         print(confusion_matrix(_y_test, _y_pred))
         print(classification_report(_y_test, _y_pred))
     return
+
+
+@app.cell
+def _(plt, sns):
+    def countplot_seaborn(df, feature):
+        plt.figure(figsize=(6, 4))
+
+        # Compute counts and sort them
+        order = df[feature].value_counts().sort_values(ascending=False).index
+
+        sns.countplot(
+            data=df,
+            x=feature,
+            order=order,          # <-- THIS sorts the bars
+            color="#FF8C00"
+        )
+
+        plt.title(f"Countplot of {feature}")
+        plt.xlabel(feature)
+        plt.ylabel("Number of Users")
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+
+        fig = plt.gcf()
+        return fig
+    return (countplot_seaborn,)
+
+
+@app.cell
+def _(np, plt):
+    def scatter_matplotlib(df, x_col, y_col):
+
+        plt.figure(figsize=(6, 4))
+
+        # Unique clusters
+        clusters = df["cluster_behavior"].unique()
+
+        # Generate orange shades
+        colors = plt.cm.Oranges(np.linspace(0.4, 0.9, len(clusters)))
+
+        # Plot each cluster
+        for cluster, color in zip(clusters, colors):
+            subset = df[df["cluster_behavior"] == cluster]
+            plt.scatter(
+                subset[x_col],
+                subset[y_col],
+                color=color,
+                alpha=0.8,
+                label=str(cluster),
+            )
+
+        plt.xlabel(x_col)
+        plt.ylabel(y_col)
+        plt.title(f"Scatter Plot: {x_col} vs {y_col}")
+        plt.legend(title="cluster_behavior")
+        plt.tight_layout()
+
+        return plt.gcf()
+    return (scatter_matplotlib,)
 
 
 @app.cell(hide_code=True)
@@ -286,7 +327,7 @@ def _(df_calendar, df_users):
     df_users_1 = df_users.merge(df_calendar_1, left_on=df_users['first_trip_date'], right_on=df_calendar_1['calendar_date'], how='left')
     # Merge to df_users and df_calendar to get which customers joined to us on a holiday
     df_users_1['Joined On Holiday'] = df_users_1['calendar_holiday']
-    df_users_1['Churn'] = df_users['Churn'] 
+    #df_users_1['Churn'] = df_users['Churn'] 
     df_users_1.drop(columns=['calendar_date', 'calendar_holiday', 'key_0'], inplace=True)
     # Droping unnecessary columns 
     df_users_1.dropna(inplace=True)
@@ -413,19 +454,28 @@ def _(cluster_features, kmeans_final, pd, scaler):
 
 
 @app.cell
-def _(df_users_2):
-    # Renaming our clusters
-    df_users_2['cluster_behavior'].replace({0: 'Casual Customer', 1: 'High-usage customers', 2: 'Moderate-usage customers'}, inplace=True)
-    # Showing different clusters of our current users
-    df_users_2[df_users_2['Churn'] == 0]['cluster_behavior'].value_counts()
+def _(df_city, df_users_2):
+    df_users_2['first_city'] = df_users_2['first_city'].map(
+        df_city.set_index('city_id')['city_name']
+    )
     return
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    > The analysis shows that the segments worth focusing on are the moderate-usage customers with an average lifetime near to 306 days, and the high-usage customers near to 282 days. The other clusters represent casual users whose churn is less critical.
-    """)
+@app.cell
+def _(centers, df_users_2):
+    # Name Clusters
+    centers["score"] = (
+        centers["Customer_Lifetime_Days"].rank(ascending=True) +
+        centers["total_trip_fare"].rank(ascending=True)
+    )
+
+    ordered_clusters = centers["score"].sort_values(ascending=False).index.tolist()
+
+    labels = [chr(65 + i) for i in range(len(ordered_clusters))]
+
+    cluster_label_map = dict(zip(ordered_clusters, labels))
+
+    df_users_2["cluster_behavior"] = df_users_2["cluster_behavior"].map(cluster_label_map)
     return
 
 
@@ -449,15 +499,23 @@ def _(mo):
         start=28, stop=180, value=28,
         label="Churn inactivity threshold (days)"
     )
+    return (churn_threshold_slider,)
 
+
+@app.cell
+def _(mo):
     n_clusters_slider = mo.ui.slider(start=3, stop=12, step=1, label="Number of clusters")
+    return (n_clusters_slider,)
 
 
-    trips_week_slider = mo.ui.slider(
-        start=1, stop=10, value=1,
-        label="Trips per week"
-    )
-    return churn_threshold_slider, n_clusters_slider, trips_week_slider
+@app.cell
+def _(df_users_2, mo):
+    multi_cluster= mo.ui.multiselect(
+        options=df_users_2['cluster_behavior'].unique(),
+        label="Choose Cluster Category Or More",
+        value=[],      
+        )
+    return (multi_cluster,)
 
 
 @app.cell
@@ -485,22 +543,53 @@ def _(
     date_from,
     date_to,
     mo,
+    multi_cluster,
     n_clusters_slider,
-    trips_week_slider,
 ):
     mo.vstack([
         churn_threshold_slider,
         n_clusters_slider,
-        trips_week_slider,
+        multi_cluster,
         mo.hstack([date_from, date_to, apply_button])
     ])
     return
 
 
 @app.cell
-def _(date_from, date_to, df_users_2):
-    df_users_3 = df_users_2[df_users_2['last_trip_date'].between(str(date_from.value),str(date_to.value))]
+def _(date_from, date_to, df_users, df_users_2, multi_cluster):
+    df_users_3 = df_users_2[(df_users_2['last_trip_date'].between(str(date_from.value),str(date_to.value)))|(df_users_2['cluster_behavior'].isin(multi_cluster.value))].merge(df_users[['passenger_id', 'Churn']], on ='passenger_id', how= 'left')
     return (df_users_3,)
+
+
+@app.cell
+def _(df_users_3, mo):
+    cols = df_users_3.select_dtypes("number").columns.tolist()
+    col_cat = (
+        df_users_3
+        .drop(columns="passenger_id", errors="ignore")
+        .select_dtypes("object")
+        .columns
+        .tolist()
+    )
+
+    feature_for_bar = mo.ui.dropdown(
+        options=col_cat,
+        label="Choose a feature for the barplot",
+        value=col_cat[0]
+    )
+
+    feature_select_x = mo.ui.dropdown(
+        options=cols,
+        label="Choose x feature for the barplot",
+        value=cols[0]
+    )
+
+    feature_select_y = mo.ui.dropdown(
+        options=cols,
+        label="Choose y feature for the barplot",
+        value=cols[0]
+    )
+    return feature_for_bar, feature_select_x, feature_select_y
 
 
 @app.cell
@@ -540,7 +629,11 @@ def _(churn_cutoff, churn_threshold_slider, df_users_3, mo):
             **{active_users:,}**
             """
         )
+    return card1, card2, card3, card4
 
+
+@app.cell
+def _(card1, card2, card3, card4, mo):
     # Display them beside each other (like Power BI)
     mo.hstack([card1, card2, card3, card4], widths="equal", gap=2)
     return
@@ -584,175 +677,26 @@ def _(centers, np, plt):
 
 
 @app.cell
-def _(df_users_3, plt):
-    def plot_feature_bar_matplotlib(df = df_users_3, feature = 'cluster_behavior' ):
-        df_grouped = df.groupby("cluster_behavior")[feature].sum()
-        fig, ax = plt.subplots(figsize=(6, 4))
-        ax.bar(df_grouped.index, df_grouped[feature])
-        ax.set_title(f"Bar Chart for {feature}")
-        ax.set_xlabel("Index")
-        ax.set_ylabel(feature)
-        plt.tight_layout()
-
-        return fig
+def _(feature_for_bar):
+    feature_for_bar
     return
 
 
 @app.cell
-def _(df_users_2, mo):
-    cols = df_users_2.columns.tolist()
-
-    feature_select1 = mo.ui.dropdown(
-        options=cols,
-        label="Choose a feature for the barplot",
-        value=cols[0]
-    )
-
-
-    feature_select2 = mo.ui.dropdown(
-        options=cols,
-        label="Choose x feature to the barplot",
-        value=cols[0]
-    )
-    mo.hstack([feature_select1, feature_select2])
+def _(countplot_seaborn, df_users_3, feature_for_bar):
+    countplot_seaborn(df_users_3, feature_for_bar.value)
     return
 
 
 @app.cell
-def _(df_users_3):
-    def countplot_seaborn(df, feature):
-        import matplotlib.pyplot as plt
-        import seaborn as sns
-
-        plt.figure(figsize=(6, 4))
-
-        # Orange countplot
-        sns.countplot(
-            data=df,
-            x=feature,
-            color="#FF8C00"
-        )
-
-        plt.title(f"Countplot of {feature}")
-        plt.xlabel(feature)
-        plt.ylabel("Number Of Users")
-        plt.xticks(rotation=45)
-        plt.tight_layout()
-
-        fig = plt.gcf()
-        return fig
-
-
-
-    countplot_seaborn(df_users_3, "cluster_behavior")
+def _(feature_select_x, feature_select_y, mo):
+    mo.hstack([feature_select_x, feature_select_y])
     return
 
 
 @app.cell
-def _(df_users_3):
-    df_users_3.select_dtypes("object").columns
-    return
-
-
-@app.cell
-def _(df_users_3):
-    df_users_3
-    return
-
-
-@app.function
-def build_pivot_table(df, index_col, value_col, aggfunc_name):
-    import pandas as pd
-
-    # Map readable names to real pandas aggfuncs
-    agg_map = {
-        "Mean": "mean",
-        "Sum": "sum",
-        "Count": "count",
-        "Std": "std",
-        "Min": "min",
-        "Max": "max",
-    }
-
-    aggfunc = agg_map[aggfunc_name]
-
-    pivot = pd.pivot_table(
-        df,
-        index=index_col,
-        values=value_col,
-        aggfunc=aggfunc,
-    )
-
-    return pivot.reset_index()
-
-
-@app.cell
-def _():
-    def _(df_users_2, mo):
-        import pandas as pd
-
-        # candidates for index (rows): typically categorical
-        index_cols = df_users_2.select_dtypes(include=["object", "category", "bool"]).columns.tolist()
-        if not index_cols:
-            index_cols = df_users_2.columns.tolist()  # fallback
-
-        # candidates for values: numeric features
-        value_cols = df_users_2.select_dtypes(include="number").columns.tolist()
-
-        aggfunc_options = ["Mean", "Sum", "Count", "Std", "Min", "Max"]
-
-        index_select = mo.ui.dropdown(
-            options=index_cols,
-            label="Index (rows)",
-            value=index_cols[0],
-        )
-
-        value_select = mo.ui.dropdown(
-            options=value_cols,
-            label="Feature (values)",
-            value=value_cols[0],
-        )
-
-        aggfunc_select = mo.ui.dropdown(
-            options=aggfunc_options,
-            label="Aggregation",
-            value="Mean",
-        )
-
-        # Show the controls
-        mo.hstack([index_select, value_select, aggfunc_select])
-
-        return index_select, value_select, aggfunc_select
-    return
-
-
-@app.cell
-def _():
-    def _(df_users_2, index_select, value_select, aggfunc_select, build_pivot_table, mo):
-        index_col = index_select.value
-        value_col = value_select.value
-        aggfunc_name = aggfunc_select.value
-
-        pivot = build_pivot_table(
-            df_users_2,
-            index_col=index_col,
-            value_col=value_col,
-            aggfunc_name=aggfunc_name,
-        )
-
-        mo.vstack(
-            [
-                mo.md(
-                    f"### Pivot table\n"
-                    f"- **Index:** `{index_col}`  \n"
-                    f"- **Feature:** `{value_col}`  \n"
-                    f"- **Aggfunc:** `{aggfunc_name}`"
-                ),
-                mo.ui.table(pivot),
-            ]
-        )
-
-        return pivot
+def _(df_users_3, feature_select_x, feature_select_y, scatter_matplotlib):
+    scatter_matplotlib(df_users_3, feature_select_x.value, feature_select_y.value)
     return
 
 
@@ -764,44 +708,14 @@ def _(df_users_3, mo):
         value=[],      
         )
 
-    multi_index = mo.ui.multiselect(
-        options=df_users_3.select_dtypes("object").columns,
-        label="Choose multiple columns",
-        value=[],      
-        )
 
-    mo.vstack([multi_index, multi_features, ])
-    return (multi_index,)
+    mo.vstack([multi_features])
+    return (multi_features,)
 
 
 @app.cell
-def _(df_users_3, multi_index, pd):
-    pd.pivot_table(
-        df_users_3,
-        index=multi_index.value,
-        columns=multi_index.value,
-        values=None,
-        aggfunc="size"
-    )
-    return
-
-
-@app.cell
-def _(df_city, df_users_3):
-    df_users_3['first_city'] = df_users_3['first_city'].map(
-        df_city.set_index('city_id')['city_name']
-    )
-    return
-
-
-@app.cell
-def _(multi_index):
-    multi_index.value
-    return
-
-
-@app.cell
-def _():
+def _(df_users_3, mo, multi_features):
+    mo.ui.table(df_users_3[multi_features.value])
     return
 
 
