@@ -4,14 +4,6 @@ __generated_with = "0.18.3"
 app = marimo.App()
 
 
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(r"""
-    # Importing The Required Libraries
-    """)
-    return
-
-
 @app.cell
 def _():
     import pandas as pd
@@ -25,12 +17,15 @@ def _():
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.cluster import KMeans
     from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+    import marimo as mo
     return (
         KMeans,
         StandardScaler,
         accuracy_score,
         classification_report,
         confusion_matrix,
+        mo,
         np,
         pd,
         plt,
@@ -42,8 +37,16 @@ def _():
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # Our Functions
-    """)
+    #Importing The Required Libraries
+    """) if mo.app_meta().mode == "edit" else None
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    #Our Functions
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
@@ -142,7 +145,7 @@ def _(np, plt):
 def _(mo):
     mo.md(r"""
     # Getting Our Data
-    """)
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
@@ -156,35 +159,31 @@ def _():
 def _(mo):
     mo.md(r"""
     # Visual Looking To Our Datasets
-    """)
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
 @app.cell
 def _(pd, url):
     df_calendar = pd.read_csv(url+'calendar.csv')
-    df_calendar
     return (df_calendar,)
 
 
 @app.cell
 def _(pd, url):
     df_city = pd.read_csv(url+'city.csv')
-    df_city
     return (df_city,)
 
 
 @app.cell
 def _(pd, url):
     df_passenger= pd.read_csv(url+'passenger.csv')
-    df_passenger
     return (df_passenger,)
 
 
 @app.cell
 def _(pd, url):
     df_trip = pd.read_csv(url+'trip.csv.gz')
-    df_trip
     return (df_trip,)
 
 
@@ -192,7 +191,7 @@ def _(pd, url):
 def _(mo):
     mo.md(r"""
     # Data Preparation: Cleaning & Preprocessing
-    """)
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
@@ -217,7 +216,6 @@ def _(df_city, df_passenger, df_trip):
 
     # Let's see the shape of the dataframe after merging
     print(df.info(), '\n-------------\n')
-    df.head()
     return (df,)
 
 
@@ -225,7 +223,7 @@ def _(df_city, df_passenger, df_trip):
 def _(mo):
     mo.md(r"""
     > As we see, the time columns are strings instead of datetime
-    """)
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
@@ -342,7 +340,7 @@ def _(df_calendar, df_users):
 def _(mo):
     mo.md(r"""
     # ML Model Part
-    """)
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
@@ -350,7 +348,7 @@ def _(mo):
 def _(mo):
     mo.md(r"""
     ### Feature Engineering Part
-    """)
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
@@ -370,7 +368,7 @@ def _(churn_cutoff, df_users_1, np):
     # Corecting inf due to dividion by zero
     # We have some NaN values after creating new features
     df_users_2.dropna(inplace=True)
-    df_users_1
+    #df_users_1
     return (df_users_2,)
 
 
@@ -388,7 +386,7 @@ def _(df_users_2, plt, sns):
 def _(mo):
     mo.md(r"""
     ### Clustering Part
-    """)
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
@@ -408,7 +406,7 @@ def _(StandardScaler, df_users_2):
 def _(mo):
     mo.md(r"""
     > Let's get the best number of clusters for our data
-    """)
+    """) if mo.app_meta().mode == "edit" else None
     return
 
 
@@ -449,7 +447,7 @@ def _(cluster_features, kmeans_final, pd, scaler):
         columns=cluster_features.columns
     )
 
-    centers
+    #centers
     return (centers,)
 
 
@@ -479,18 +477,12 @@ def _(centers, df_users_2):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # The Visualization Part
+    # 99 Little Orange - Dashboard
     """)
     return
-
-
-@app.cell
-def _():
-    import marimo as mo
-    return (mo,)
 
 
 @app.cell

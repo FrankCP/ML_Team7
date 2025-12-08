@@ -5,143 +5,26 @@
   },
   "cells": [
     {
-      "id": "Hbol",
-      "code_hash": "81a581141199195f22a89a651aff3b91",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"importing-the-required-libraries\">Importing The Required Libraries</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "vblA",
-      "code_hash": "e371f82b93e743f72b8bf2f0d595065c",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"our-functions\">Our Functions</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "BYtC",
-      "code_hash": "ae9f7dac98fac69a9c1a6edcd5f789b8",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"getting-our-data\">Getting Our Data</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Kclp",
-      "code_hash": "3fc1e655053bf17d34c8f0c099e98ada",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"visual-looking-to-our-datasets\">Visual Looking To Our Datasets</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ZHCJ",
-      "code_hash": "2d997aacd734523bf8fdd9c059ec5d82",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"data-preparation-cleaning-preprocessing\">Data Preparation: Cleaning &amp; Preprocessing</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "TqIu",
-      "code_hash": "080e13d3bf59e0c1509496b39807b283",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">As we see, the time columns are strings instead of datetime</span>\n</blockquote></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "ZBYS",
-      "code_hash": "e05fba688f33cf0213cd439191da21ee",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"ml-model-part\">ML Model Part</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "aLJB",
-      "code_hash": "316a2a5bcb80319b1a07c6b2fea91817",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"feature-engineering-part\">Feature Engineering Part</h3></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "AjVT",
-      "code_hash": "4d46dd235ffdd34ac6196e76d776f66f",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"clustering-part\">Clustering Part</h3></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "NCOB",
-      "code_hash": "e5f7ce3e60ebe03ecd6580e0be3777d1",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><blockquote>\n<span class=\"paragraph\">Let's get the best number of clusters for our data</span>\n</blockquote></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "wlCL",
-      "code_hash": "19d269fd4e14f1a84be04fe971f5e785",
+      "code_hash": "7367cedffff44a8fa7f822aab23c62da",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"the-visualization-part\">The Visualization Part</h1></span>"
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"99-little-orange-dashboard\">99 Little Orange - Dashboard</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "2ce814a076da32b71a626fe8f6fc1289",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
           }
         }
       ],
@@ -149,133 +32,422 @@
     },
     {
       "id": "MJUe",
-      "code_hash": "913ee29ba96c561bdfa180c0be962b31",
-      "outputs": [],
+      "code_hash": "c8685559515037665251f85d8090dda1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "7ec52fa82430ab87db6c37a757088dcb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "bkHC",
       "code_hash": "75129dfd8233791d453283e995e83c3f",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "lEQa",
       "code_hash": "ab19a764c48cd0a2784d2dc9625f7d25",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "PKri",
       "code_hash": "58a6c73208284c486034129a59dd341f",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "Xref",
       "code_hash": "07ee1dfd26a31136415c4ac4b43fec10",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "SFPL",
       "code_hash": "f902e5b0adfa140ca698415a4a98305f",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "c9d5e1243c3471732450c4d3d5f78cd2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "RGSE",
-      "code_hash": "b29a397a9c87a7081be0879d48d9f514",
-      "outputs": [],
+      "code_hash": "a485dfafa6d58e053ca839256bfce62c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "28b75b56366cf90a3c353cdf6d16d4b4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "emfo",
-      "code_hash": "3e50d6a33d85826ac3ee3fcee3fcf259",
-      "outputs": [],
+      "code_hash": "72016ba37561757e20f6d01331442bfa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "Hstk",
-      "code_hash": "abf242542908e449e91d3b489967e8fc",
-      "outputs": [],
+      "code_hash": "d46bd7c4e5fd2324ef0ba068c6aa5520",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "nWHF",
-      "code_hash": "47229d0153b394f1092a475009d4a41d",
-      "outputs": [],
+      "code_hash": "e1a5de9dc15423d3e6437edfa1656f66",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "iLit",
-      "code_hash": "c0b01694f1185bb29a942c0fc8e18216",
-      "outputs": [],
+      "code_hash": "dcee37cffd32b0552d7340b21ae7a178",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "7652d28c4580126bb4918ab8a8834a91",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "ROlb",
       "code_hash": "c4c3fd82171c73470b01ceb0950f63a8",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "qnkX",
-      "code_hash": "1741f0f6eac0d00faafc0fda28a0a63c",
-      "outputs": [],
+      "code_hash": "960eadf33b0dbdacf948e4453be956ed",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "2b264ad8a794f32c3904243e7f095591",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "Vxnm",
       "code_hash": "6296bdb5e00c95e25d6def5837dca9d1",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "DnEU",
       "code_hash": "2b36d1fbd65d8d53e77bfc5a325ac07a",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "ulZA",
       "code_hash": "0d9ca13c9c877a426582e4af74dbfce5",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "ecfG",
-      "code_hash": "ca8b97e8314930a4e448bd52cb2ebb14",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "Pvdt",
       "code_hash": "47e2846155c49dac933a796ec2e96a79",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "c6796a123234bce5ce6ae4f2a535d9b4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "e1fbc54e330338c1b18fbe0f791828cf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "42257f7e6b3ceda6a34fa4cd3c9d4d7f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "e83e5d3ace0a8264873933207c0145f1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kqZH",
+      "code_hash": "ede831ad5cd3d6aae13fd73f6f76041a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "ca8b97e8314930a4e448bd52cb2ebb14",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "nHfw",
-      "code_hash": "d8784e5e4d547b56d5bced1407e131c2",
-      "outputs": [],
+      "code_hash": "04500e6ba9a047433d7fc900b6664605",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "xXTn",
       "code_hash": "c1e7287e188a76a5f9bf4bead73b6eca",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "internal",
+          "evalue": "An internal error occurred: f8fc59a9-7daf-4a29-af98-128b85db9ac3",
+          "traceback": []
+        }
+      ],
       "console": []
     },
     {
       "id": "pHFh",
       "code_hash": "052e3eb9fa7fbea71be1f84fee72e3e5",
-      "outputs": [],
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
       "console": []
     },
     {
       "id": "aqbW",
       "code_hash": "7bc7ec2e10da402a5c7336752a3b5018",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "26691f517f19b0ae9ef0950ea8cfd74e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "wAgl",
+      "code_hash": "4e957a2a043d9f4f415074967415c762",
       "outputs": [],
       "console": []
     },
@@ -287,13 +459,7 @@
     },
     {
       "id": "TXez",
-      "code_hash": "be0503e208c46b58ecca120b160ef826",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "dNNg",
-      "code_hash": "26691f517f19b0ae9ef0950ea8cfd74e",
+      "code_hash": "47a8c22b6a3ccb93c70dcd286c8c95ab",
       "outputs": [],
       "console": []
     },
@@ -304,103 +470,85 @@
       "console": []
     },
     {
-      "id": "kqZH",
-      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "wAgl",
-      "code_hash": "ede831ad5cd3d6aae13fd73f6f76041a",
-      "outputs": [],
-      "console": []
-    },
-    {
       "id": "rEll",
-      "code_hash": "4e957a2a043d9f4f415074967415c762",
-      "outputs": [],
-      "console": []
-    },
-    {
-      "id": "dGlV",
       "code_hash": "e7c567a0f20fe3a7573f6e8d78ea1285",
       "outputs": [],
       "console": []
     },
     {
-      "id": "SdmI",
+      "id": "dGlV",
       "code_hash": "704a940694d468938ce20770a588a7b7",
       "outputs": [],
       "console": []
     },
     {
-      "id": "lgWD",
+      "id": "SdmI",
       "code_hash": "65f14204a5ccb628accaa09b577a15b4",
       "outputs": [],
       "console": []
     },
     {
-      "id": "yOPj",
+      "id": "lgWD",
       "code_hash": "021635a2f957c99fcbab5f888aaeca54",
       "outputs": [],
       "console": []
     },
     {
-      "id": "fwwy",
+      "id": "yOPj",
       "code_hash": "c474949d3236f26ad0f8c06bfe7b27e9",
       "outputs": [],
       "console": []
     },
     {
-      "id": "LJZf",
+      "id": "fwwy",
       "code_hash": "61cc58070f6714beca04aa75e8a7e91a",
       "outputs": [],
       "console": []
     },
     {
-      "id": "urSm",
+      "id": "LJZf",
       "code_hash": "5ae9a249caab70043669939505819dc4",
       "outputs": [],
       "console": []
     },
     {
-      "id": "jxvo",
+      "id": "urSm",
       "code_hash": "dad2a7c37b65a466fd57ec09520e9254",
       "outputs": [],
       "console": []
     },
     {
-      "id": "mWxS",
+      "id": "jxvo",
       "code_hash": "1c06277ac0022319c110ba370975bb7c",
       "outputs": [],
       "console": []
     },
     {
-      "id": "CcZR",
+      "id": "mWxS",
       "code_hash": "0db661447fa1bb296e06368a01e93283",
       "outputs": [],
       "console": []
     },
     {
-      "id": "YWSi",
+      "id": "CcZR",
       "code_hash": "c31df6313d524fef15b832acbe10e092",
       "outputs": [],
       "console": []
     },
     {
-      "id": "zlud",
+      "id": "YWSi",
       "code_hash": "05a996970c24766c77e32da44ba08853",
       "outputs": [],
       "console": []
     },
     {
-      "id": "tZnO",
+      "id": "zlud",
       "code_hash": "d5823d81e2afa26cef95408f13414f2c",
       "outputs": [],
       "console": []
     },
     {
-      "id": "xvXZ",
+      "id": "tZnO",
       "code_hash": "c3e32c99da4cb2223c66701415a9abc9",
       "outputs": [],
       "console": []
