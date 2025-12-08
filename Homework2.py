@@ -107,7 +107,7 @@ def _(mo):
 
 @app.cell
 def _():
-    url="https://raw.githubusercontent.com/FrankCP/ML_Team7/main/data"
+    url="https://raw.githubusercontent.com/FrankCP/ML_Team7/main/data/"
     return (url,)
 
 
