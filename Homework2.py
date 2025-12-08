@@ -110,34 +110,32 @@ def _(plt, sns):
 
 @app.cell
 def _(np, plt):
-    def scatter_matplotlib(df, x_col, y_col):
-
+    def scatter_matplotlib(df_users_3 , x_col, y_col):
         plt.figure(figsize=(6, 4))
 
         # Unique clusters
-        clusters = df["cluster_behavior"].unique()
+        clusters = df_users_3["cluster_behavior"].unique()
 
         # Generate orange shades
         colors = plt.cm.Oranges(np.linspace(0.4, 0.9, len(clusters)))
 
         # Plot each cluster
         for cluster, color in zip(clusters, colors):
-            subset = df[df["cluster_behavior"] == cluster]
+            subset = df_users_3[df_users_3["cluster_behavior"] == cluster]
             plt.scatter(
                 subset[x_col],
                 subset[y_col],
                 color=color,
                 alpha=0.8,
-                label=str(cluster),
-            )
-
+                label=str(cluster),)
         plt.xlabel(x_col)
         plt.ylabel(y_col)
         plt.title(f"Scatter Plot: {x_col} vs {y_col}")
         plt.legend(title="cluster_behavior")
         plt.tight_layout()
-
+    
         return plt.gcf()
+
     return (scatter_matplotlib,)
 
 
@@ -431,49 +429,58 @@ def _(KMeans, X_scaled, plt):
 
 
 @app.cell
-def _(KMeans, X_scaled, df_users_2, n_clusters_slider):
+def _(
+    KMeans,
+    X_scaled,
+    cluster_features,
+    df_users_2,
+    n_clusters_slider,
+    pd,
+    scaler,
+):
     best_k = n_clusters_slider.value
     kmeans_final = KMeans(n_clusters=best_k, random_state=42, n_init=10)
     _cluster_labels = kmeans_final.fit_predict(X_scaled)
-    df_users_2['cluster_behavior'] = _cluster_labels
-    return (kmeans_final,)
 
 
-@app.cell
-def _(cluster_features, kmeans_final, pd, scaler):
+
     # Let's get the centers and figure out the charaterics of our clusters
     centers = pd.DataFrame(
         scaler.inverse_transform(kmeans_final.cluster_centers_),
         columns=cluster_features.columns
     )
 
-    centers
-    return (centers,)
-
-
-@app.cell
-def _(df_city, df_users_2):
-    df_users_2['first_city'] = df_users_2['first_city'].map(
-        df_city.set_index('city_id')['city_name']
-    )
-    return
-
-
-@app.cell
-def _(centers, df_users_2):
-    # Name Clusters
+    # Compute score for ordering clusters
     centers["score"] = (
         centers["Customer_Lifetime_Days"].rank(ascending=True) +
         centers["total_trip_fare"].rank(ascending=True)
     )
 
+
+    # Order clusters by score (highest first)
     ordered_clusters = centers["score"].sort_values(ascending=False).index.tolist()
 
+
+    # Create alphabetical labels
     labels = [chr(65 + i) for i in range(len(ordered_clusters))]
 
+    # Create map: cluster index → letter label
     cluster_label_map = dict(zip(ordered_clusters, labels))
 
-    df_users_2["cluster_behavior"] = df_users_2["cluster_behavior"].map(cluster_label_map)
+    # Apply mapping directly to the predicted labels
+    _cluster_labels = pd.Series(_cluster_labels).map(cluster_label_map).values
+
+
+    df_users_2['cluster_behavior'] = _cluster_labels
+    return (centers,)
+
+
+@app.cell
+def _(df_city, df_users_2):
+    #centers
+    df_users_2['first_city'] = df_users_2['first_city'].map(
+        df_city.set_index('city_id')['city_name']
+    )
     return
 
 
@@ -632,7 +639,7 @@ def _(card1, card2, card3, card4, mo):
 
 
 @app.cell
-def _(centers, np, plt):
+def _(centers, df_users_2, np, plt):
     # Getting feature columns from the cluster centers.
     _features = list(centers.columns)
     data = centers.values
@@ -648,7 +655,7 @@ def _(centers, np, plt):
     angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False)
     # Prepare Data for Radar Chart
     angles = np.concatenate([angles, [angles[0]]])
-    _cluster_labels = [f"Cluster {i}" for i in range(centers.shape[0])]
+    _cluster_labels = df_users_2['cluster_behavior'].unique()
     # Create Angles for Each Feature
     #  Angles are evenly spaced around the circle.
     plt.figure(figsize=(8, 8))
@@ -664,7 +671,8 @@ def _(centers, np, plt):
     plt.legend(loc='upper right', bbox_to_anchor=(1.3, 1.1))
     plt.tight_layout()
     # Format Axes and Labels
-    plt.show()
+    #plt.show()
+    plt.gcf()
     return
 
 
@@ -688,6 +696,7 @@ def _(feature_select_x, feature_select_y, mo):
 
 @app.cell
 def _(df_users_3, feature_select_x, feature_select_y, scatter_matplotlib):
+
     scatter_matplotlib(df_users_3, feature_select_x.value, feature_select_y.value)
     return
 
@@ -703,6 +712,12 @@ def _(df_users_3, mo):
 
     mo.vstack([multi_features])
     return (multi_features,)
+
+
+@app.cell
+def _(df_users_3):
+    df_users_3['cluster_behavior'].unique()
+    return
 
 
 @app.cell
